@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Novira — Excalvo Shampoo Guatemala</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --negro: #0f0e0d;
+  --crema: #f5f0e8;
+  --verde: #2d5a3d;
+  --verde-claro: #e8f2ec;
+  --verde-acento: #4a8c5c;
+  --dorado: #b8943f;
+  --dorado-claro: #f5edda;
+  --rojo-suave: #c0392b;
+  --gris: #6b6560;
+  --gris-claro: #f0ede8;
+  --blanco: #ffffff;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --radio: 4px;
+  --radio-lg: 12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--crema);
+  color: var(--negro);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── ANNOUNCEMENT BAR ── */
+.bar {
+  background: var(--verde);
+  color: var(--blanco);
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.bar span { color: #a8d5b5; }
+
+/* ── NAV ── */
+nav {
+  background: var(--crema);
+  border-bottom: 1px solid #e0d8cc;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--verde);
+  letter-spacing: -0.5px;
+}
+.logo span { color: var(--dorado); }
+.nav-cta {
+  background: var(--verde);
+  color: var(--blanco);
+  padding: 10px 20px;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--verde-acento); }
+
+/* ── HERO ── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 88vh;
+  background: var(--negro);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(45,90,61,0.4) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 56px 80px 64px;
+  position: relative;
+  z-index: 2;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(168,213,181,0.15);
+  border: 1px solid rgba(168,213,181,0.3);
+  color: #a8d5b5;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  width: fit-content;
+}
+.hero-badge::before { content: '🇬🇹'; }
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 900;
+  color: var(--blanco);
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: #a8d5b5;
+}
+.hero-sub {
+  font-size: 16px;
+  color: #c8c0b5;
+  max-width: 420px;
+  margin-bottom: 36px;
+  line-height: 1.65;
+}
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+.hero-stars {
+  color: #f0c040;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+.hero-trust-text { font-size: 13px; color: #a0998f; }
+.hero-trust-text strong { color: var(--blanco); }
+.hero-price-block {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.precio-antes {
+  font-size: 18px;
+  color: #6b6560;
+  text-decoration: line-through;
+}
+.precio-ahora {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--blanco);
+  letter-spacing: -2px;
+}
+.precio-moneda { font-size: 22px; color: #a8d5b5; }
+.precio-nota { font-size: 13px; color: #8a8278; }
+.hero-cta {
+  display: inline-block;
+  background: var(--verde);
+  color: var(--blanco);
+  padding: 18px 40px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.15s;
+  margin-bottom: 16px;
+  max-width: 340px;
+  text-align: center;
+}
+.hero-cta:hover { background: var(--verde-acento); transform: translateY(-1px); }
+.hero-entrega {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #a0998f;
+}
+.hero-entrega::before { content: '✓'; color: #a8d5b5; font-weight: 700; }
+.hero-img {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a2e20 0%, #0f1a12 100%);
+}
+.hero-img-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+}
+.product-mockup {
+  width: 220px;
+  height: 320px;
+  background: linear-gradient(160deg, #2d5a3d, #1a3326);
+  border-radius: 12px;
+  border: 1px solid rgba(168,213,181,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+.product-mockup::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: 11px;
+  background: linear-gradient(160deg, rgba(168,213,181,0.08), transparent);
+  pointer-events: none;
+}
+.pm-logo {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--blanco);
+  letter-spacing: -1px;
+}
+.pm-sub {
+  font-size: 10px;
+  color: #a8d5b5;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.pm-icons {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.pm-dot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(168,213,181,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.pm-ml {
+  font-size: 11px;
+  color: #6a8f72;
+  letter-spacing: 0.1em;
+  margin-top: 12px;
+}
+.hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.h-stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(168,213,181,0.06);
+  border: 1px solid rgba(168,213,181,0.12);
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+.h-stat-n {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: #a8d5b5;
+  min-width: 70px;
+}
+.h-stat-l { font-size: 12px; color: #8a8278; line-height: 1.3; }
+
+/* ── TRUST STRIP ── */
+.trust-strip {
+  background: var(--verde);
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.t-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--blanco);
+  font-size: 13px;
+  font-weight: 500;
+}
+.t-item span { font-size: 20px; }
+
+/* ── SECTION BASE ── */
+section { padding: 80px 40px; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--verde-acento);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: var(--negro);
+  margin-bottom: 16px;
+}
+.section-title em { font-style: italic; color: var(--verde); }
+.section-sub {
+  font-size: 16px;
+  color: var(--gris);
+  max-width: 560px;
+  line-height: 1.65;
+  margin-bottom: 48px;
+}
+
+/* ── PROBLEMA ── */
+.problema { background: var(--negro); color: var(--blanco); }
+.problema .section-label { color: #a8d5b5; }
+.problema .section-title { color: var(--blanco); }
+.problema .section-sub { color: #8a8278; }
+.problema-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.problema-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.p-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radio);
+}
+.p-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.p-text-title { font-size: 14px; font-weight: 600; color: var(--blanco); margin-bottom: 3px; }
+.p-text-desc { font-size: 13px; color: #6b6560; line-height: 1.5; }
+.problema-visual {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radio-lg);
+  padding: 36px 32px;
+  text-align: center;
+}
+.big-stat {
+  font-family: var(--font-display);
+  font-size: 80px;
+  font-weight: 900;
+  color: var(--verde-acento);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -4px;
+}
+.big-stat-label { font-size: 14px; color: #8a8278; margin-bottom: 32px; }
+.dht-box {
+  background: rgba(45,90,61,0.2);
+  border: 1px solid rgba(45,90,61,0.4);
+  border-radius: var(--radio);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.dht-title {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a8d5b5;
+  margin-bottom: 8px;
+}
+.dht-text { font-size: 13px; color: #8a8278; line-height: 1.5; }
+.dht-bar-wrap { margin-top: 14px; }
+.dht-bar-label { display: flex; justify-content: space-between; font-size: 11px; color: #6b6560; margin-bottom: 6px; }
+.dht-bar { height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
+.dht-bar-fill { height: 100%; background: var(--verde-acento); border-radius: 3px; width: 82.4%; }
+
+/* ── INGREDIENTES ── */
+.ingredientes { background: var(--crema); }
+.ing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.ing-card {
+  background: var(--blanco);
+  border: 1px solid #e0d8cc;
+  border-radius: var(--radio-lg);
+  padding: 32px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+.ing-card:hover { transform: translateY(-4px); }
+.ing-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--verde);
+}
+.ing-emoji { font-size: 44px; margin-bottom: 16px; }
+.ing-name {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--verde-acento);
+  margin-bottom: 8px;
+}
+.ing-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--negro);
+}
+.ing-desc { font-size: 13px; color: var(--gris); line-height: 1.6; }
+.ing-badge {
+  display: inline-block;
+  background: var(--verde-claro);
+  color: var(--verde);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-top: 14px;
+}
+.certifs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 48px;
+  justify-content: center;
+}
+.cert-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--blanco);
+  border: 1px solid #e0d8cc;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--negro);
+}
+.cert-pill::before { content: '✓'; color: var(--verde-acento); font-weight: 700; }
+
+/* ── COMO FUNCIONA ── */
+.como-funciona { background: var(--gris-claro); }
+.pasos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+  position: relative;
+}
+.pasos::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--verde) 0, var(--verde) 8px, transparent 8px, transparent 16px);
+}
+.paso {
+  text-align: center;
+  position: relative;
+}
+.paso-num {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: var(--blanco);
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  position: relative;
+  z-index: 1;
+}
+.paso-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--negro);
+  margin-bottom: 8px;
+}
+.paso-desc { font-size: 13px; color: var(--gris); line-height: 1.5; }
+
+/* ── COMPARACION ── */
+.comparacion { background: var(--negro); color: var(--blanco); padding: 80px 40px; }
+.comparacion .section-title { color: var(--blanco); }
+.comparacion .section-label { color: #a8d5b5; }
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+}
+.comp-table th {
+  padding: 16px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.comp-table th:nth-child(2) {
+  background: rgba(45,90,61,0.3);
+  border-radius: 8px 8px 0 0;
+  color: #a8d5b5;
+  text-align: center;
+}
+.comp-table th:nth-child(3) { color: #6b6560; text-align: center; }
+.comp-table td {
+  padding: 14px 20px;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: #c8c0b5;
+}
+.comp-table td:nth-child(2) {
+  background: rgba(45,90,61,0.15);
+  text-align: center;
+  font-weight: 600;
+  color: #a8d5b5;
+}
+.comp-table td:nth-child(3) { text-align: center; color: #4a4540; }
+.check { color: #4a8c5c; font-size: 18px; }
+.cross { color: #4a4540; font-size: 18px; }
+
+/* ── TESTIMONIOS ── */
+.testimonios { background: var(--crema); }
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.test-card {
+  background: var(--blanco);
+  border: 1px solid #e0d8cc;
+  border-radius: var(--radio-lg);
+  padding: 28px 24px;
+  transition: transform 0.2s;
+}
+.test-card:hover { transform: translateY(-3px); }
+.test-card.featured {
+  border-color: var(--verde);
+  grid-column: span 1;
+  background: var(--verde-claro);
+}
+.test-stars { color: #f0c040; font-size: 14px; letter-spacing: 2px; margin-bottom: 14px; }
+.test-quote {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--negro);
+  margin-bottom: 20px;
+}
+.test-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.test-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--verde);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--blanco);
+  flex-shrink: 0;
+}
+.test-name { font-size: 14px; font-weight: 600; color: var(--negro); }
+.test-loc { font-size: 12px; color: var(--gris); }
+.test-verified { font-size: 11px; color: var(--verde-acento); font-weight: 500; margin-top: 2px; }
+
+/* ── STATS BAR ── */
+.stats-bar { background: var(--verde); padding: 56px 40px; }
+.stats-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+.s-num {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--blanco);
+  letter-spacing: -2px;
+}
+.s-label { font-size: 13px; color: #a8d5b5; margin-top: 4px; }
+
+/* ── GARANTIA ── */
+.garantia { background: var(--dorado-claro); border-top: 1px solid #e8d8a0; border-bottom: 1px solid #e8d8a0; padding: 60px 40px; }
+.garantia-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.garantia-badge {
+  width: 100px; height: 100px;
+  border: 3px solid var(--dorado);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.garantia-badge .g-num {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--dorado);
+  line-height: 1;
+}
+.garantia-badge .g-days { font-size: 11px; color: var(--dorado); letter-spacing: 0.08em; text-transform: uppercase; }
+.garantia-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--negro);
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+.garantia-text { font-size: 14px; color: #5a4e38; line-height: 1.6; }
+
+/* ── PRECIOS ── */
+.precios { background: var(--gris-claro); }
+.precio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.precio-card {
+  background: var(--blanco);
+  border: 1px solid #e0d8cc;
+  border-radius: var(--radio-lg);
+  padding: 32px 24px;
+  position: relative;
+  text-align: center;
+}
+.precio-card.popular {
+  border: 2px solid var(--verde);
+  transform: scale(1.03);
+}
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--verde);
+  color: var(--blanco);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.p-plan-name {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gris);
+  margin-bottom: 12px;
+}
+.p-plan-price {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 900;
+  color: var(--negro);
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.p-plan-price sup {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--gris);
+  vertical-align: top;
+  margin-top: 8px;
+}
+.p-plan-antes { font-size: 13px; color: var(--gris); text-decoration: line-through; margin-bottom: 4px; }
+.p-plan-desc { font-size: 12px; color: var(--gris); margin-bottom: 24px; }
+.p-plan-features {
+  list-style: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.p-plan-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--negro);
+}
+.p-plan-features li::before { content: '✓'; color: var(--verde-acento); font-weight: 700; flex-shrink: 0; }
+.btn-comprar {
+  display: block;
+  width: 100%;
+  background: var(--verde);
+  color: var(--blanco);
+  padding: 16px;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.btn-comprar:hover { background: var(--verde-acento); }
+.btn-comprar.secondary {
+  background: transparent;
+  border: 1px solid #e0d8cc;
+  color: var(--negro);
+}
+.btn-comprar.secondary:hover { background: var(--gris-claro); }
+.entrega-nota {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--gris);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.entrega-nota strong { color: var(--negro); }
+
+/* ── FAQ ── */
+.faq { background: var(--crema); }
+.faq-list { max-width: 700px; margin: 48px auto 0; display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  background: var(--blanco);
+  border: 1px solid #e0d8cc;
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+.faq-q {
+  padding: 18px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--negro);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+.faq-q::after { content: '+'; font-size: 22px; color: var(--verde-acento); font-weight: 300; }
+.faq-item.open .faq-q::after { content: '−'; }
+.faq-a {
+  display: none;
+  padding: 0 20px 18px;
+  font-size: 14px;
+  color: var(--gris);
+  line-height: 1.65;
+  border-top: 1px solid #f0ede8;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ── CTA FINAL ── */
+.cta-final {
+  background: var(--negro);
+  padding: 100px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-final::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(45,90,61,0.4) 0%, transparent 60%);
+}
+.cta-final .section-label { color: #a8d5b5; position: relative; }
+.cta-final .section-title { color: var(--blanco); position: relative; max-width: 700px; margin: 0 auto 16px; }
+.cta-final-sub { font-size: 16px; color: #8a8278; margin-bottom: 40px; position: relative; }
+.cta-final-btn {
+  display: inline-block;
+  background: var(--verde);
+  color: var(--blanco);
+  padding: 20px 56px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.15s;
+  position: relative;
+}
+.cta-final-btn:hover { background: var(--verde-acento); transform: translateY(-2px); }
+.cta-final-entrega {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #6b6560;
+  position: relative;
+}
+.cta-final-entrega strong { color: #a8d5b5; }
+
+/* ── FOOTER ── */
+footer {
+  background: #0a0908;
+  padding: 40px;
+  text-align: center;
+  font-size: 12px;
+  color: #4a4540;
+}
+footer .f-logo {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--blanco);
+  margin-bottom: 12px;
+}
+footer .f-logo span { color: var(--verde-acento); }
+footer p { line-height: 1.8; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-content { padding: 48px 24px; }
+  .hero-img { display: none; }
+  .problema-grid,
+  .ing-grid,
+  .test-grid,
+  .precio-grid { grid-template-columns: 1fr; }
+  .pasos { grid-template-columns: 1fr 1fr; }
+  .pasos::before { display: none; }
+  .stats-inner { grid-template-columns: repeat(2,1fr); }
+  .garantia-inner { grid-template-columns: 1fr; text-align: center; }
+  .trust-strip { gap: 20px; padding: 20px 24px; }
+  section { padding: 56px 24px; }
+  .precio-card.popular { transform: none; }
+  nav { padding: 14px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="bar">
+  🇬🇹 Envío a toda Guatemala · <span>Pagá al recibir tu pedido</span> · Entrega en 2–4 días hábiles
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">NOV<span>IRA</span></div>
+  <a href="#precios" class="nav-cta">Comprar Ahora</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Por fin disponible en Guatemala</div>
+    <h1>Tu cabello<br>puede crecer<br><em>de nuevo.</em></h1>
+    <p class="hero-sub">Excalvo es el único shampoo con aceite de romero que bloquea la DHT al 82.4% — la hormona que destruye tu cabello. Formulado por un tricólogo. 100% natural. Sin dependencia.</p>
+    <div class="hero-trust">
+      <div class="hero-stars">★★★★★</div>
+      <div class="hero-trust-text"><strong>+25,000 hombres</strong><br>en América Latina ya lo usan</div>
+    </div>
+    <div class="hero-price-block">
+      <span class="precio-antes">Q 350</span>
+      <div>
+        <span class="precio-moneda">Q</span>
+        <span class="precio-ahora">199</span>
+      </div>
+    </div>
+    <a href="#precios" class="hero-cta">Quiero mi Excalvo</a>
+    <div class="hero-entrega">Pagás al recibir — sin riesgo</div>
+    <div class="hero-entrega" style="margin-top:6px">Envío gratis en tu primer pedido</div>
+  </div>
+  <div class="hero-img">
+    <div class="hero-img-inner">
+      <div class="product-mockup">
+        <div class="pm-logo">NOVIRA</div>
+        <div class="pm-sub">Shampoo capilar natural</div>
+        <div class="pm-icons">
+          <div class="pm-dot">🌿</div>
+          <div class="pm-dot">🧅</div>
+          <div class="pm-dot">🥥</div>
+        </div>
+        <div class="pm-ml">250 ml · 30 días</div>
+      </div>
+      <div class="hero-stats">
+        <div class="h-stat">
+          <div class="h-stat-n">82.4%</div>
+          <div class="h-stat-l">Inhibición de DHT<br>respaldado por ciencia</div>
+        </div>
+        <div class="h-stat">
+          <div class="h-stat-n">90 días</div>
+          <div class="h-stat-l">Garantía de devolución<br>sin preguntas</div>
+        </div>
+        <div class="h-stat">
+          <div class="h-stat-n">2 sem.</div>
+          <div class="h-stat-l">87% ve cambios<br>en las primeras 2 semanas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="t-item"><span>🔒</span> Pago al recibir</div>
+  <div class="t-item"><span>🚚</span> Envío a toda Guatemala</div>
+  <div class="t-item"><span>🌿</span> 100% Natural</div>
+  <div class="t-item"><span>↩️</span> Garantía 90 días</div>
+  <div class="t-item"><span>👨‍⚕️</span> Formulado por tricólogo</div>
+</div>
+
+<!-- PROBLEMA -->
+<section class="problema">
+  <div class="container">
+    <div class="section-label">El problema real</div>
+    <h2 class="section-title" style="color:white">¿Por qué los shampoos<br>de farmacia <em style="color:#a8d5b5">no te funcionan?</em></h2>
+    <p class="section-sub" style="color:#8a8278">No es tu genética. No es la edad. Es que nadie te ha dicho la verdad sobre lo que destruye tu cabello.</p>
+    <div class="problema-grid">
+      <div class="problema-list">
+        <div class="p-item">
+          <div class="p-icon">💊</div>
+          <div>
+            <div class="p-text-title">Los shampoos solo limpian</div>
+            <div class="p-text-desc">Head & Shoulders, Pantene, Dove. Ninguno ataca la causa raíz de la caída. Solo limpian y te dan ilusión de estar haciendo algo.</div>
+          </div>
+        </div>
+        <div class="p-item">
+          <div class="p-icon">⚠️</div>
+          <div>
+            <div class="p-text-title">El minoxidil crea dependencia</div>
+            <div class="p-text-desc">Si lo dejás, el cabello cae más rápido que antes. Quedás atrapado comprando un químico de por vida.</div>
+          </div>
+        </div>
+        <div class="p-item">
+          <div class="p-icon">🔬</div>
+          <div>
+            <div class="p-text-title">La DHT mata tus folículos en silencio</div>
+            <div class="p-text-desc">Es una hormona que encoge tus folículos mes a mes. Si no la bloqueás, eventualmente ya no producen cabello nuevo.</div>
+          </div>
+        </div>
+        <div class="p-item">
+          <div class="p-icon">🏥</div>
+          <div>
+            <div class="p-text-title">Los dermatólogos llegan tarde</div>
+            <div class="p-text-desc">Para cuando pedís cita y pagás la consulta, ya perdiste meses de folículos que podían recuperarse.</div>
+          </div>
+        </div>
+      </div>
+      <div class="problema-visual">
+        <div class="big-stat">68%</div>
+        <div class="big-stat-label">de hombres guatemaltecos experimenta caída de cabello antes de los 40</div>
+        <div class="dht-box">
+          <div class="dht-title">¿Qué es la DHT?</div>
+          <div class="dht-text">La dihidrotestosterona es la hormona responsable del 95% de la alopecia masculina. Se acumula en los folículos y los encoge hasta matarlos.</div>
+          <div class="dht-bar-wrap">
+            <div class="dht-bar-label">
+              <span>Inhibición de DHT con Excalvo</span>
+              <span style="color:#a8d5b5">82.4%</span>
+            </div>
+            <div class="dht-bar"><div class="dht-bar-fill"></div></div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:#4a4540;line-height:1.5">Aceite de romero vs minoxidil 2% · 6 meses · Mismo crecimiento · Estudio publicado en PubMed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTES -->
+<section class="ingredientes">
+  <div class="container">
+    <div class="section-label">La fórmula</div>
+    <h2 class="section-title">Tres ingredientes.<br><em>Una sola misión.</em></h2>
+    <p class="section-sub">Cada ingrediente fue seleccionado por el tricólogo Dr. Andrés Romero con respaldo científico publicado. Sin relleno. Sin química innecesaria.</p>
+    <div class="ing-grid">
+      <div class="ing-card">
+        <div class="ing-emoji">🌿</div>
+        <div class="ing-name">Ingrediente #1</div>
+        <div class="ing-title">Aceite de Romero</div>
+        <div class="ing-desc">Inhibe la enzima 5-alfa-reductasa al 82.4% — la misma que convierte la testosterona en DHT. Estimula la circulación del cuero cabelludo y reactiva folículos dormidos. Equivalente natural al finasteride, sin efectos secundarios.</div>
+        <div class="ing-badge">Bloquea DHT 82.4%</div>
+      </div>
+      <div class="ing-card">
+        <div class="ing-emoji">🧅</div>
+        <div class="ing-name">Ingrediente #2</div>
+        <div class="ing-title">Cebolla Morada</div>
+        <div class="ing-desc">Rica en azufre y quercetina. El azufre es el mineral estructural del cabello — sin él, los folículos no pueden producir hebras fuertes. La quercetina actúa como antiinflamatorio natural del cuero cabelludo, creando el ambiente ideal para el crecimiento.</div>
+        <div class="ing-badge">Nutre el folículo</div>
+      </div>
+      <div class="ing-card">
+        <div class="ing-emoji">🥥</div>
+        <div class="ing-name">Ingrediente #3</div>
+        <div class="ing-title">Aceite de Coco</div>
+        <div class="ing-desc">Es el único aceite que penetra la fibra capilar completa, no solo la cubre. Hidrata desde adentro, sella la humedad, reduce el quiebre y deja el cabello suave y brillante. Además es antiinflamatorio y antimicrobiano — cuero cabelludo limpio y sano.</div>
+        <div class="ing-badge">Penetra la fibra capilar</div>
+      </div>
+    </div>
+    <div class="certifs">
+      <div class="cert-pill">Sin sulfatos</div>
+      <div class="cert-pill">Sin parabenos</div>
+      <div class="cert-pill">Sin siliconas</div>
+      <div class="cert-pill">100% natural</div>
+      <div class="cert-pill">Sin crueldad animal</div>
+      <div class="cert-pill">Probado por laboratorio independiente</div>
+      <div class="cert-pill">Formulado por tricólogo certificado</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="como-funciona">
+  <div class="container">
+    <div class="section-label">Modo de uso</div>
+    <h2 class="section-title">Tan simple como<br><em>ducharse.</em></h2>
+    <p class="section-sub">No necesitás cambiar tu rutina. Solo reemplazá tu shampoo actual con Excalvo.</p>
+    <div class="pasos">
+      <div class="paso">
+        <div class="paso-num">1</div>
+        <div class="paso-title">Mojá el cabello</div>
+        <div class="paso-desc">En la ducha como siempre. No hace falta nada especial.</div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">2</div>
+        <div class="paso-title">Aplicá Excalvo</div>
+        <div class="paso-desc">Una cantidad pequeña. Distribuí bien por todo el cuero cabelludo.</div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">3</div>
+        <div class="paso-title">Masajeá 2 minutos</div>
+        <div class="paso-desc">El masaje activa la circulación y potencia la absorción de los ingredientes.</div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">4</div>
+        <div class="paso-title">Enjuagá y listo</div>
+        <div class="paso-desc">Los activos ya penetraron. Repetí diariamente para mejores resultados.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARACION -->
+<section class="comparacion">
+  <div class="container">
+    <div class="section-label">Por qué Excalvo</div>
+    <h2 class="section-title" style="color:white">La diferencia que<br><em style="color:#a8d5b5">sí importa.</em></h2>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th style="color:#6b6560">Característica</th>
+          <th>✦ Excalvo</th>
+          <th>Shampoos de farmacia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Bloquea la DHT</td>
+          <td><span class="check">✓</span> 82.4%</td>
+          <td><span class="cross">✗</span> No</td>
+        </tr>
+        <tr>
+          <td>100% ingredientes naturales</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+        <tr>
+          <td>Sin dependencia química</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗</span> (minoxidil crea dependencia)</td>
+        </tr>
+        <tr>
+          <td>Formulado por tricólogo</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+        <tr>
+          <td>Resultados en 2 semanas</td>
+          <td><span class="check">✓</span> 87% lo confirma</td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+        <tr>
+          <td>Garantía de devolución</td>
+          <td><span class="check">✓</span> 90 días</td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+        <tr>
+          <td>Pago contra entrega en Guatemala</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonios">
+  <div class="container">
+    <div class="section-label">Testimonios reales</div>
+    <h2 class="section-title">Lo que dicen<br><em>los chapines.</em></h2>
+    <p class="section-sub">Resultados reales de personas reales en Guatemala. Sin filtros, sin actores pagados.</p>
+    <div class="test-grid">
+      <div class="test-card featured">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-quote">"Llevaba dos años usando minoxidil con miedo de dejarlo. Lo dejé cuando empecé con Excalvo. Ya van tres meses y el cabello se quedó. Y ya no tengo ese ardor en el cuero cabelludo de siempre."</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#2d5a3d">JO</div>
+          <div>
+            <div class="test-name">Jorge O.</div>
+            <div class="test-loc">Guatemala Ciudad, 41 años</div>
+            <div class="test-verified">✓ Compra verificada</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-quote">"Mi esposa lo pidió por mí sin decirme. Lo vi en la ducha y pensé que era otro producto más. En tres semanas ya no había mechones en el desagüe. Ahora soy yo el que lo pide."</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#1a3326">MA</div>
+          <div>
+            <div class="test-name">Mario A.</div>
+            <div class="test-loc">Quetzaltenango, 38 años</div>
+            <div class="test-verified">✓ Compra verificada</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-quote">"Probé de todo. Biotina, shampoos de farmacia, hasta remedios caseros. Gasté como Q800 en puras babosadas. Excalvo me costó Q199 y es lo único que me ha funcionado de verdad."</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#4a8c5c">RT</div>
+          <div>
+            <div class="test-name">Roberto T.</div>
+            <div class="test-loc">Mixco, 49 años</div>
+            <div class="test-verified">✓ Compra verificada</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-quote">"El olor a cebolla al principio me mató. Ya le iba a decir a mi señora que lo botara. Pero a las dos semanas ya no me caía nada en la regadera. Ahora huelo a cebolla con gusto."</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#2d5a3d">CV</div>
+          <div>
+            <div class="test-name">Carlos V.</div>
+            <div class="test-loc">Villa Nueva, 44 años</div>
+            <div class="test-verified">✓ Compra verificada</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-quote">"Tengo 55 años y entradas desde los 35. Mi hijo me lo mandó. Al mes ya veía pelitos nuevos en la coronilla. Mi barbero me preguntó qué estaba usando. Ahora él también lo usa."</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#1a3326">FP</div>
+          <div>
+            <div class="test-name">Fernando P.</div>
+            <div class="test-loc">Antigua Guatemala, 55 años</div>
+            <div class="test-verified">✓ Compra verificada</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-quote">"Pagué al recibir así que no perdía nada. Cuando llegó el pedido lo usé sin esperar. En quince días mi señora me dijo: ¿qué te pusiste? Te ves diferente. Eso me dijo todo."</div>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#4a8c5c">DM</div>
+          <div>
+            <div class="test-name">David M.</div>
+            <div class="test-loc">Escuintla, 36 años</div>
+            <div class="test-verified">✓ Compra verificada</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div><div class="s-num">25K+</div><div class="s-label">hombres en América Latina</div></div>
+    <div><div class="s-num">87%</div><div class="s-label">ven cambios en 2 semanas</div></div>
+    <div><div class="s-num">82.4%</div><div class="s-label">inhibición de DHT</div></div>
+    <div><div class="s-num">90</div><div class="s-label">días de garantía</div></div>
+  </div>
+</div>
+
+<!-- GARANTIA -->
+<section class="garantia">
+  <div class="container">
+    <div class="garantia-inner">
+      <div class="garantia-badge">
+        <div class="g-num">90</div>
+        <div class="g-days">días</div>
+      </div>
+      <div>
+        <div class="garantia-title">Probalo sin riesgo.<br>Si no funciona, te devolvemos tu dinero.</div>
+        <div class="garantia-text">Estamos tan seguros de que Excalvo va a funcionar para vos, que te damos 90 días de garantía completa. Si en ese tiempo no ves resultados, te devolvemos cada quetzal. Sin preguntas, sin complicaciones. Porque si no funciona para vos, no nos merecemos tu plata.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section class="precios" id="precios">
+  <div class="container">
+    <div class="section-label">Elige tu plan</div>
+    <h2 class="section-title">Empezá hoy.<br><em>Pagás al recibir.</em></h2>
+    <p class="section-sub">Sin tarjeta de crédito. Sin compromisos. El pago es contra entrega cuando recibís tu pedido en la puerta de tu casa.</p>
+    <div class="precio-grid">
+      <div class="precio-card">
+        <div class="p-plan-name">Plan de prueba</div>
+        <div class="p-plan-antes">Q 350</div>
+        <div class="p-plan-price"><sup>Q</sup>199</div>
+        <div class="p-plan-desc">1 botella · 30 días de uso</div>
+        <ul class="p-plan-features">
+          <li>1 botella Excalvo (250ml)</li>
+          <li>Guía de cuidado capilar digital</li>
+          <li>Envío gratis a toda Guatemala</li>
+          <li>Pago contra entrega</li>
+          <li>Garantía 90 días</li>
+        </ul>
+        <button class="btn-comprar secondary" onclick="document.getElementById('formulario').scrollIntoView({behavior:'smooth'})">Quiero probarlo</button>
+      </div>
+      <div class="precio-card popular">
+        <div class="popular-badge">⭐ Más popular</div>
+        <div class="p-plan-name">Plan recomendado</div>
+        <div class="p-plan-antes">Q 700</div>
+        <div class="p-plan-price"><sup>Q</sup>349</div>
+        <div class="p-plan-desc">2 botellas · 60 días · Ahorrás Q351</div>
+        <ul class="p-plan-features">
+          <li>2 botellas Excalvo (500ml)</li>
+          <li>Guía de cuidado capilar digital</li>
+          <li>Acceso a comunidad VIP</li>
+          <li>Envío gratis prioritario</li>
+          <li>Pago contra entrega</li>
+          <li>Garantía 90 días</li>
+          <li>Regalo sorpresa incluido</li>
+        </ul>
+        <button class="btn-comprar" onclick="document.getElementById('formulario').scrollIntoView({behavior:'smooth'})">Quiero este plan</button>
+      </div>
+      <div class="precio-card">
+        <div class="p-plan-name">Plan mejor valor</div>
+        <div class="p-plan-antes">Q 1,050</div>
+        <div class="p-plan-price"><sup>Q</sup>499</div>
+        <div class="p-plan-desc">3 botellas · 90 días · Ahorrás Q551</div>
+        <ul class="p-plan-features">
+          <li>3 botellas Excalvo (750ml)</li>
+          <li>Guía de cuidado capilar digital</li>
+          <li>Acceso a comunidad VIP</li>
+          <li>Envío gratis prioritario</li>
+          <li>Pago contra entrega</li>
+          <li>Garantía 90 días completa</li>
+          <li>2 regalos sorpresa</li>
+        </ul>
+        <button class="btn-comprar secondary" onclick="document.getElementById('formulario').scrollIntoView({behavior:'smooth'})">Mejor inversión</button>
+      </div>
+    </div>
+    <div class="entrega-nota">
+      🚚 <strong>Envío gratis</strong> a toda Guatemala · Pagás al recibir · Entrega en 2–4 días hábiles
+    </div>
+  </div>
+</section>
+
+<!-- FORMULARIO DE PEDIDO -->
+<section id="formulario" style="background:var(--negro);padding:80px 40px">
+  <div class="container" style="max-width:600px">
+    <div class="section-label" style="color:#a8d5b5">Hacer mi pedido</div>
+    <h2 class="section-title" style="color:white;margin-bottom:8px">Un paso y<br><em style="color:#a8d5b5">ya es tuyo.</em></h2>
+    <p style="color:#8a8278;font-size:14px;margin-bottom:36px">Llenás el formulario, te lo llevamos a tu dirección y pagás cuando llegue. Sin tarjeta. Sin riesgos.</p>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div>
+          <label style="display:block;font-size:12px;font-weight:500;color:#8a8278;margin-bottom:6px;letter-spacing:0.06em;text-transform:uppercase">Nombre</label>
+          <input type="text" placeholder="Tu nombre" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:2px;padding:12px 14px;color:white;font-size:14px;outline:none;font-family:var(--font-body)">
+        </div>
+        <div>
+          <label style="display:block;font-size:12px;font-weight:500;color:#8a8278;margin-bottom:6px;letter-spacing:0.06em;text-transform:uppercase">Teléfono</label>
+          <input type="tel" placeholder="Tu WhatsApp" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:2px;padding:12px 14px;color:white;font-size:14px;outline:none;font-family:var(--font-body)">
+        </div>
+      </div>
+      <div>
+        <label style="display:block;font-size:12px;font-weight:500;color:#8a8278;margin-bottom:6px;letter-spacing:0.06em;text-transform:uppercase">Dirección de entrega</label>
+        <input type="text" placeholder="Dirección completa, colonia, municipio" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:2px;padding:12px 14px;color:white;font-size:14px;outline:none;font-family:var(--font-body)">
+      </div>
+      <div>
+        <label style="display:block;font-size:12px;font-weight:500;color:#8a8278;margin-bottom:6px;letter-spacing:0.06em;text-transform:uppercase">Departamento</label>
+        <select style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:2px;padding:12px 14px;color:white;font-size:14px;outline:none;font-family:var(--font-body);appearance:none">
+          <option value="" style="background:#0f0e0d">Seleccioná tu departamento</option>
+          <option style="background:#0f0e0d">Guatemala</option>
+          <option style="background:#0f0e0d">Quetzaltenango</option>
+          <option style="background:#0f0e0d">Sacatepéquez (Antigua)</option>
+          <option style="background:#0f0e0d">Escuintla</option>
+          <option style="background:#0f0e0d">San Marcos</option>
+          <option style="background:#0f0e0d">Huehuetenango</option>
+          <option style="background:#0f0e0d">Alta Verapaz</option>
+          <option style="background:#0f0e0d">Petén</option>
+          <option style="background:#0f0e0d">Izabal</option>
+          <option style="background:#0f0e0d">Otro departamento</option>
+        </select>
+      </div>
+      <div>
+        <label style="display:block;font-size:12px;font-weight:500;color:#8a8278;margin-bottom:8px;letter-spacing:0.06em;text-transform:uppercase">Elegí tu plan</label>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <label style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:14px 16px;cursor:pointer">
+            <input type="radio" name="plan" value="1" style="accent-color:var(--verde-acento)">
+            <span style="color:white;font-size:14px">1 botella — <strong>Q 199</strong> <span style="color:#6b6560;font-size:12px">(ahorrás Q151)</span></span>
+          </label>
+          <label style="display:flex;align-items:center;gap:12px;background:rgba(45,90,61,0.2);border:1px solid rgba(74,140,92,0.4);border-radius:4px;padding:14px 16px;cursor:pointer">
+            <input type="radio" name="plan" value="2" checked style="accent-color:var(--verde-acento)">
+            <span style="color:white;font-size:14px">2 botellas — <strong style="color:#a8d5b5">Q 349</strong> <span style="color:#a8d5b5;font-size:12px">⭐ Más popular</span></span>
+          </label>
+          <label style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:14px 16px;cursor:pointer">
+            <input type="radio" name="plan" value="3" style="accent-color:var(--verde-acento)">
+            <span style="color:white;font-size:14px">3 botellas — <strong>Q 499</strong> <span style="color:#6b6560;font-size:12px">(mejor precio por botella)</span></span>
+          </label>
+        </div>
+      </div>
+      <button onclick="alert('¡Gracias! Nos comunicaremos a tu WhatsApp para confirmar tu pedido.')" style="width:100%;background:var(--verde);color:white;border:none;padding:18px;font-size:16px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;border-radius:2px;cursor:pointer;font-family:var(--font-body);margin-top:8px;transition:background 0.2s">
+        Confirmar mi pedido — Pago al recibir
+      </button>
+      <div style="text-align:center;font-size:12px;color:#4a4540;line-height:1.6">
+        🔒 Tus datos están seguros · Solo usamos tu info para procesar y entregar tu pedido
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="section-label">Preguntas frecuentes</div>
+    <h2 class="section-title" style="text-align:center">Todo lo que necesitás<br><em>saber antes de pedir.</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">¿Cómo funciona el pago contra entrega?</div>
+        <div class="faq-a">Es simple: pedís, te lo llevamos a tu dirección en Guatemala, y pagás cuando el mensajero llega a tu puerta. No necesitás tarjeta de crédito ni transferencia por adelantado. Primero recibís, después pagás.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿En cuántos días llega a mi departamento?</div>
+        <div class="faq-a">Guatemala Ciudad y áreas metropolitanas: 1–2 días hábiles. Resto de departamentos: 2–4 días hábiles. Una vez confirmado tu pedido, te enviamos el número de seguimiento por WhatsApp.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿En cuánto tiempo veo resultados?</div>
+        <div class="faq-a">El 87% de nuestros clientes reporta ver reducción en la caída en las primeras 2 semanas. El crecimiento de cabello nuevo se empieza a notar entre la semana 4 y 8. Los mejores resultados se ven entre los 60 y 90 días de uso continuo diario.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Funciona para mujeres también?</div>
+        <div class="faq-a">Sí. Excalvo está formulado para hombres y mujeres de todas las edades. La caída femenina también puede estar relacionada con DHT, especialmente después del embarazo o durante cambios hormonales. Es seguro para todo tipo de cabello.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Si no me funciona puedo devolver el producto?</div>
+        <div class="faq-a">Absolutamente. Tenés 90 días de garantía total. Si no ves resultados, nos avisás y te devolvemos tu dinero sin complicaciones ni preguntas. Así de seguros estamos de que Excalvo va a funcionar para vos.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Puedo usarlo a diario? ¿Tiene efectos secundarios?</div>
+        <div class="faq-a">Sí, se recomienda uso diario para mejores resultados. Al ser 100% natural, sin sulfatos ni parabenos, no tiene efectos secundarios conocidos. Podés usarlo como tu shampoo normal de todos los días sin problema.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Para qué alcanza una botella?</div>
+        <div class="faq-a">Cada botella contiene 250ml y rinde aproximadamente 30 días con uso diario. Por eso recomendamos el plan de 2 botellas — te da tiempo suficiente para ver resultados reales y está a mejor precio por botella.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="section-label">Último paso</div>
+  <h2 class="section-title">Tu cabello estuvo esperando<br><em>demasiado tiempo.</em></h2>
+  <p class="cta-final-sub">Pedís hoy. Te llega en 2–4 días. Pagás cuando llegue.</p>
+  <a href="#formulario" class="cta-final-btn">Quiero mi Excalvo ahora</a>
+  <p class="cta-final-entrega">🚚 Envío gratis · <strong>Pagás al recibir</strong> · Garantía 90 días</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">NOV<span>IRA</span></div>
+  <p>
+    Guatemala 🇬🇹 · novirasoporte@gmail.com<br>
+    Entrega a toda la República · Pago contra entrega<br>
+    © 2026 Novira Guatemala. Todos los derechos reservados.
+  </p>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = this.parentElement;
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>
